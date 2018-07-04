@@ -1,0 +1,49 @@
+.bloc-info{
+	float:left;
+	display:inline-block;
+	margin-left:100px;
+}
+.photo{
+	float:right;
+	margin-right:50px;
+	margin-left:120px;
+}
+.top-part{
+	margin-left: 50px;
+	display:inline-block;	
+}
+hr{
+	margin-top: 10px;
+}
+.container{
+	margin: 0 auto;
+	width:1120px;
+	
+}
+.pic{
+	width: 100px;
+	height: 30px;
+	
+}
+td{
+	vertical-align: top;
+	}
+
+.partie2{
+	width:100%;
+}
+.left-bloc{
+	float: left;
+	width: 30%;
+	margin-left: 25px;
+	border-right :2px solid blue;
+	
+	
+}
+.right-bloc{
+	float: right;
+	width: 65%;
+	margin-left:25px;
+	
+	
+}
