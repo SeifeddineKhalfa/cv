@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>formulaire</title>
+		<link  rel="stylesheet" type="text/css" href="formstyle.css">
+		<script src="validation.js"></script>
+		
+	</head>
+	
+	<body>
+		<div class="upcontainer">
+			<div class="profileform">
+			<h2 align="center">Profile Infos</h2>
+				<form method="POST" action="#"  name="profile" onSubmit="return validateProfile();" novalidate ; >
+					<ul>
+						<li><b>Id :</b> </li>
+						<input type="number" name="ProfileId" min="0" max="50" value="1"> 
+						<li><b>Nom : </b> </li>
+						<input type="text" name="name" id="name" value="" > 
+						<li><b>DateOfBirth : </b></Li>
+						<input type="date" name="DateOfBirth" required> 
+						<li><b>Adresse</b> </li>
+						<input type="text" name="Adresse"> 
+						<li><b>Phone</b></li> 
+						<input type="text" name="Phone" id="phone"> 
+						<li><b>E_mail:</b></li>
+						<input type="email" name="E_mail" id="email" placeholder="Enter a valid email address"  required>
+						<li><b>GitHub Account:</b></li> 
+						<input type="text" name="GitHub_Profile" placeholder="Enter a valid url" required> 
+						<li><b>Description</b></li> 
+						<input type="text" name="Description" required>
+						<br>
+						<input type="submit" value="Submit"  > 
+						<input type="reset">
+					</ul>
+				</form>
+			</div>
+			<div class="skillsform">
+				<h2 align="center" > Skills </h2>
+				<form method="POST"  name="skills" novalidate onsubmit="validateSkills();";>
+					<ul>
+						<li><b>Id :</b> <br></li>
+						<input type="number" name="ProfileId" min="0" max="50" value="1"> <br>
+						<li><b>SkillsId :</b></li>
+						<input type="number" name="ProfileId" min="0" max="50" value="1"> <br>
+						<li><b>Languages :</b></li> <br>
+							<ul>
+								<input type="checkbox" name="Arabic" value="Arabic">Arabic<br>
+								<input type="checkbox" name="English" value="English">English<br>
+								<input type="checkbox" name="French" value="French">French<br>
+								<li><b>Other : </b><input type="text" name="otherLanguages"> </li>
+							</ul>
+						<li><b>ItSkills : </b></li><br>
+							<ul>
+								<li><b>Programming : </b></li>
+								<input type="checkbox" name="php" value="php">PHP<br>
+								<input type="checkbox" name="html/css" value="html/css" checked>HTML/CSS<br>
+								<input type="checkbox" name="JavaScript" value="JavaScript">JavaScript <br>
+								<input name="skill1" value="Other" />
+								<input name="skill2" value="Other" />
+								<input name="skill3" value="Other" />
+								<li><b>Design : </b></li>
+								
+								<ul>
+									<input type="checkbox" name="Photoshop" value="Photoshop">Photoshop<br>
+									<input type="checkbox" name="illustrator" value="illustrator" >Illustrator<br>
+									<li><input name="design" value="Other" /></li>	
+								</ul>
+								<li><b>Other ItSkills : </b></li>
+								<input name="otheritskills" value="Other" />		
+							</ul>
+						<li><b>SocialLife : </b></li>
+						<input type="text" name="socialLife" >
+						<li><b>Hobbies : </b></li>
+						<input type="text" name="hobbies" >
+					</ul>
+					<input type="submit" value="Submit" >
+					<input type="reset">
+				</form>
+			</div>
+		</div>
+		<div class="buttomcontainer">
+			<div class="educationform">
+				<h2>Education</h2>
+				<form method="POST"  name="education" novalidate>
+						<table>
+							<tr>
+								<td><b>Profile ID : </b></td>
+								<td><input type="number" name="ProfileId" min="0" max="50" value="1"> </td>
+							</tr>
+							<tr>
+								<td><b>Id : </b></td>
+								<td><input type="number" name="id" min="0" max="50" value="1"></td>
+							
+							<tr>
+								<td><b>Period : </b></td>
+								<td><input type="text" name="period"></td>
+							</tr>
+							<tr>
+								<td><b>Description</b>
+								<td><textarea>Enter your education level here</textarea>
+							</tr>
+						</table>
+					<input type="submit" value="Submit" > 
+					<input type="reset">
+				</form>
+			</div>
+			
+			<div class="experienceform">
+				<h2> Experience</h2>
+				<form method="POST"  name="experience" novalidate>
+					
+						<h3 align="center">Academic</h3>
+						<table>
+							<tr>
+								<td><b>Period :</b></td>
+								<td><input type="text" name="period"></td>
+								<td><b>Title</b></td>
+								<td><input type="text" name="titre">
+							</tr>
+							<tr>
+								<td><b>Description : </b></td>
+								<td><textarea>Enter description</textarea>
+								<td><b>Tools : </b></td>
+								<td><textarea>Enter Tools</textarea>
+							
+							</tr>
+						</table>
+						
+						<h3 align="center">Professional</h3>
+						<table>
+							<tr>
+								<td><b>Period :</b></td>
+								<td><input type="text" name="period"></td>
+								<td><b>Title</b></td>
+								<td><input type="text" name="titre">
+							</tr>
+							<tr>
+								<td><b>Description : </b></td>
+								<td><textarea>Enter description</textarea>
+								<td><b>Tools : </b></td>
+								<td><textarea>Enter Tools</textarea>
+							
+							</tr>
+						<input type="submit" value="Submit" > 
+						<input type="reset">
+						</table>
+				</form>	
+			</div>
+		</div>
+		
+		
+	</body>
+</html>
