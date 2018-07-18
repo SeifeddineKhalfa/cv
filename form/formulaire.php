@@ -37,7 +37,8 @@
 														
 							<span class="message" > Required </span>
 							
-						</div><br>
+						</div>
+						<br>
 						
 						<b>DateOfBirth : </b><br>
 						<div <?php
@@ -55,7 +56,8 @@
 							value="<?php echo isset($_POST['DateOfBirth']) ? $_POST['DateOfBirth'] : '' ?>">
 							<label><em>*</em></label>
 							<span class="message"> Insert Date Of Birth </span>
-						</div><br>
+						</div>
+						<br>
 						
 						<b>Place Of Birth : </b><br>
 						<div <?php
@@ -73,7 +75,8 @@
 							value="<?php echo isset($_POST['PlaceOfBirth']) ? $_POST['PlaceOfBirth'] : '' ?>">
 							<label><em>*</em></label>
 							<span class="message"> Insert Date Of Birth </span>
-						</div><br>
+						</div>
+						<br>
 						
 						<div <?php
 								if(in_array("Adresse", $errorInputs))
@@ -91,7 +94,9 @@
 							value="<?php echo isset($_POST['Adresse']) ? $_POST['Adresse'] : '' ?>"> 
 							<label><em>*</em></label>
 							<span class="message"> Insert Adress </span>
-						</div><br>
+						</div>
+						<br>
+						
 						
 						<div <?php
 								if(in_array("Phone", $errorInputs))
@@ -104,6 +109,7 @@
 									 echo "class='valid'";
 								}
 							?>>
+							
 							<b>Phone</b>   <br>
 							<input type="text"   name="Phone" id="phone"
 							value="<?php echo isset($_POST['Phone']) ? $_POST['Phone'] : '' ?>"> 
@@ -126,7 +132,8 @@
 							<input type="email" name="E_mail" id="email"   placeholder="Enter a valid email address"  required
 							value="<?php echo isset($_POST['E_mail']) ? $_POST['E_mail'] : '' ?>">
 							
-						</div><br>
+						</div>
+						<br>
 						
 						<div <?php
 								if(in_array("GitHub_Profile", $errorInputs))
@@ -144,7 +151,8 @@
 							value="<?php echo isset($_POST['GitHub_Profile']) ? $_POST['GitHub_Profile'] : '' ?>">
 							<label><em>*</em></label>
 							<span class="message"> insert your github profile </span>
-						</div><br>
+						</div>
+						<br>
 						
 						<div <?php
 								if(in_array("Description", $errorInputs))
@@ -167,6 +175,7 @@
 						
 						<input type="submit" value="Submit"  > 
 						<input type="reset">
+						<a href="display.php">Display Profiles </a>
 					 
 				</form>
 			</div>
@@ -174,17 +183,24 @@
 				<h2 align="center" > Skills </h2>
 				<form method="POST"  name="skills" novalidate onsubmit="validateSkills();";>
 						<div>
-						 <b>Id :</b> <br> 
-						<input type="number" name="ProfileId" min="0" max="50" value="1">
+							<b>Id :</b> <br> 
+							<input type="number" name="ProfileId" min="0" max="50" value="1">
 						</div>	<br>
+						
+						<div>
 						 <b>SkillsId :</b> 
-						<input type="number" name="ProfileId" min="0" max="50" value="1"> <br>
+						<input type="number" name="ProfileId" min="0" max="50" value="1">
+						</div>
+						<br>
+						
+						<div>
 						 <b>Languages :</b>  <br>
 							 
 								<input type="checkbox" name="Arabic" id="lang1"	 value="Arabic">Arabic<br>
 								<input type="checkbox" name="English" id="lang2" value="English">English<br>
 								<input type="checkbox" name="French" id="lang3" value="French">French<br>
 								 <b>Other : </b><input type="text" name="otherLanguages">  
+						</div>		 
 							 
 						 <b>ItSkills : </b> <br>
 							 
