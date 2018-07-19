@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Login</title>
+		<meta charset="UTF-8">
+		<!--===============================================================================================-->	
+		<link rel="icon" type="image/png" href="loginIcon.png"/>
+		<link rel="stylesheet" type="text/css" href="loginstyle.css">
+		<!--===============================================================================================-->	
+		<script src="athentificationVerif.js"></script>
+	</head>
+	
+	<body>
+		<div class="container">
+			<div class="form">
+				<form class="loginform" name="loginForm" id="loginForm" method="POST" onsubmit="return athentification()"  novalidate >
+					<div class="formtitle">
+						Welcome
+					</div>
+
+						<input type="email" name="email" id="email" placeholder="Email"  required>
+
+						<input type="password" name="pwd" id="pwd" placeholder="Password" required>
+
+						<button type="submit"> Login </button>
+
+						<a href="#" class="forgotpwd">Forgot your password ? </a>
+					
+						
+					
+				</form>
+				
+				<a href="register.html" ><button>Register</button></a>
+			</div>
+			
+		</div>
+	</body>
+</html>
