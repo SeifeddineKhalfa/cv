@@ -23,4 +23,8 @@
 			('03', '01', '09/2016-01/2017', 'Kinder Garden' , 'Developement of a desktop application to monitor children activities using 
 			convenient sensors and cameras.', 'ools : C Language, Linux GTK,Glade');
 			
-			
+	INSERT INTO academic (graduation , note)
+	VALUES ('licence' , '12');
+	
+	INSERT INTO professional (certificat)
+	Values ('linux');

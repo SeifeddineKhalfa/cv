@@ -2,7 +2,7 @@
 CREATE DATABASE cv;
 DROP TABLE IF EXISTS Profile;
 Create TABLE Profile(
-	ProfileId integer(10),
+	ProfileId integer(10) AUTO_INCREMENT,
 	name varchar(50),
 	DateOfBirth date,
 	PlaceOfBirth varchar(30),
@@ -51,7 +51,12 @@ create TABLE Experience(
 	FOREIGN KEY(ProfileId) REFERENCES Profile(ProfileId)
 	
 );
-
+CREATE TABLE users(
+	id integer AUTO_INCREMENT,
+	email varchar(30),
+	password varchar(30),
+	PRIMARY KEY (id)
+);
 
 
 CREATE TABLE Academic(
@@ -67,7 +72,15 @@ CREATE TABLE Professional(
 	certificat varchar (50),
 	PRIMARY KEY(certificat)
 ) ;
+DROP TABLE IF EXISTS users;
+CREATE TABLE users(
+	id integer AUTO_INCREMENT,
+	email varchar(30),
+	password varchar(30),
+	PRIMARY KEY (id)
+);
 
-ADD CONSTRAINT 
+
+
 
 

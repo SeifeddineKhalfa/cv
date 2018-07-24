@@ -72,4 +72,32 @@ body,html {
   margin: 20px 0;
 }
 
+#success-icon {
+	display : none;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+/*--adjust as necessary--*/
+    color: #199900;
+    font-size: 18px;
+    padding-right: 0.5em;
+	
+    top: 10px;
+    left: 0;
+}
 
+#failure-icon{
+    display : none;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+/*--adjust as necessary--*/
+    color: red;
+    font-size: 18px;
+    padding-right: 0.5em;
+  
+    top: 10px;
+    left: 0;
+}

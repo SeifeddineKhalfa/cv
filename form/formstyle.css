@@ -1,12 +1,14 @@
 .upcontainer{
 	margin: 0 auto;
 	width:1120px;
-	
+	height:1000px;
+	border-bottom: 4px dotted blue;
 }
 .buttomcontainer{
 	margin: 0 auto;
 	width:1120px;
-	
+	height:1000px;
+
 }
 
 * {
@@ -22,7 +24,8 @@ input[type=text], select, textarea {
 
 textarea {
     border-color: #e184ca;
-	border-radius: 12px;}
+	border-radius: 12px;
+	}
 	
 
 
@@ -77,5 +80,22 @@ input[type=number]{
 .experienceform{
 	width : 50%;
 	float : right ;
+
 }
+
+.message{
+	display:none;
+}
+
+
+.error input{
+	border : 2px solid red;
+}
+.valid input{
+	border : 1px solid green;
+}
+/*.error .message {
+	display: block;
+	color: red;
+}*/
 

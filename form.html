@@ -3,7 +3,7 @@
 	<head>
 		<title>formulaire</title>
 		<link  rel="stylesheet" type="text/css" href="formstyle.css">
-		<script src="validation.js"></script>
+		<!--<script src="validation.js"></script>!-->
 		
 	</head>
 	
@@ -11,57 +11,55 @@
 		<div class="upcontainer">
 			<div class="profileform">
 			<h2 align="center">Profile Infos</h2>
-				<form method="POST" action="#"  id="profile" onSubmit="return validateProfile();" novalidate ; >
+				<form method="POST" action="validation.php"  id="profile"  novalidate ; >
 				
-						<b>Id :</b><br>
-						<div class="">
-							<input type="number" name="ProfileId" min="0" max="50" value="1"> <br>
-						</div><br>
+						
 						
 						<b>Name : </b> <br>
 						<div class="">
-							<input type="text" name="name" id="name" class="name" > 
+							<input type="text"   name="name" id="name" class="name" > 
 							<label><em>*</em></label>						
 							<span class="message" > Required </span>
+							<?php  echo $errors['name']; ?>
 						</div><br>
 						
 						<b>DateOfBirth : </b><br>
 						<div class="">
-							<input type="date" name="DateOfBirth" id="dateOfBirth" required>
+							<input type="date" name="DateOfBirth"   id="dateOfBirth" required>
 							<label><em>*</em></label>
 							<span class="message"> Insert Date Of Birth </span>
 						</div><br>
 						
 						<div class="">
 							<b>Adresse</b>  <br>
-							<input type="text" name="Adresse" id="adress"> 
+							<input type="text"   name="Adresse" id="adress" class> 
 							<label><em>*</em></label>
 							<span class="message"> Insert Adress </span>
 						</div><br>
 						
 						<div class="">
 							<b>Phone</b>   <br>
-							<input type="text" name="Phone" id="phone"> 
+							<input type="text"   name="Phone" id="phone"> 
 							<label><em>*</em></label>
 							<span class="message"> Insert Phone </span>
 						</div>	<br>
 						
 						<div class="">
 							<b>E_mail:</b>  <br>
-							<input type="email" name="E_mail" id="email" placeholder="Enter a valid email address"  required>
+							<input type="email" name="E_mail" id="email"   placeholder="Enter a valid email address"  required>
 							
 						</div><br>
 						
 						<div class="">
 							<b>GitHub Account:</b>  <br> 
-							<input type="text" name="GitHub_Profile" id="githubProfile" placeholder="Enter a valid url" required>
+							<input type="text" name="GitHub_Profile"   id="githubProfile" placeholder="Enter a valid url" required>
 							<label><em>*</em></label>
 							<span class="message"> insert your github profile </span>
 						</div><br>
 						
 						<div class="">
 							<b>Description</b>  <br> 
-							<input type="text" name="Description" id="description" required>
+							<input type="text" name="Description"   id="description" required>
 							<label><em>*</em></label>
 							<span class="message"> you must insert a description </span>
 						</div>
