@@ -1,3 +1,4 @@
+
 *{
 	margin: 0px; 
 	padding: 0px; 
@@ -115,7 +116,7 @@ a.forgotpwd {
 }
 
 a.forgotpwd:hover {
-	background-color: #555;
+	background-color: #999;
 }
 
 a.forgotpwd:active {
@@ -123,5 +124,13 @@ a.forgotpwd:active {
 }
 
 a.forgotpwd:visited {
-	background-color: #ccc;
+	background-color: #999;
+}
+
+.account-created-msg
+{
+	padding: 20px;
+    background-color: #90edb9;
+    color: #e95947;
+    margin-bottom: 15px;
 }
