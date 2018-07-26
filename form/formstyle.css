@@ -84,7 +84,7 @@ input[type=number]{
 }
 
 .message{
-	display:none;
+	display:;
 }
 
 
@@ -94,8 +94,8 @@ input[type=number]{
 .valid input{
 	border : 1px solid green;
 }
-/*.error .message {
+.error {
 	display: block;
 	color: red;
-}*/
+}
 

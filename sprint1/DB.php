@@ -1,37 +1,28 @@
 <?php
- 
-class DB {
- 
-   //
-   private static $_instance = null;
-   public $connexion ;
- 
-   //constructeur
-   private function __construct() {  
-	try
-		{	
-			echo "\n new instance";
-			$this->$connexion = new PDO('mysql:host=localhost;dbname=cv', 'root' , '');
-		}
-			
-		catch(Exception $e)
-		{
-			die('Erreur' .$e->getMessage());
-		}	
-   }
- 
-	
-  //instanciation d'objet unique 
-    public static function getInstance()
+
+/**
+LA CLASSE DE CONFIGURATION DE LA BASE DE DONNEE
+*/
+class DB
+{
+	private static $instance = NULL; 
+	public static function getConnexion() 
 	{
-		if(is_null(self::$_instance)) {
-		   self::$_instance = new DB();  
-		}else
-			echo "\n persist instance";
-	 
-		return self::$_instance;
+      	if (!isset(self::$instance)) 
+      	{
+			try
+			{
+		        self::$instance = new PDO('mysql:host=localhost;dbname=cv', 'root' , '');
+				self::$instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			}
+			catch(Exception $e)
+			{
+	            die('Erreur: '.$e->getMessage());
+			}
+      	}
+      	return self::$instance;
     }
-	
 }
- 
+
 ?>
+

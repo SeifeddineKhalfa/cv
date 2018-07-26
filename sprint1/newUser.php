@@ -24,14 +24,14 @@
 			//include 'DB.php';
 			//$db = DB::getInstance();
 			$db = new PDO('mysql:host=localhost;dbname=cv', 'root' , '');
-			$sql = 'INSERT INTO users (email, password) VALUES (?, ?);';
+			$sql = 'INSERT INTO users (email, password,name) VALUES (?, ?, ?);';
 			$stmt = $db->prepare($sql);
 			// use exec() because no results are returned
-			$stmt->execute([$email, MD5($password)]);
+			$stmt->execute([$email, MD5($password),$name]);
 			//style***
-			echo "New record created successfully";
+			//echo "New record created successfully";
 			session_start();
-			$_SESSION["message"] = "Account have been created !";
+			$_SESSION["message"] = "Your Account have been created !";
 			header("location:authentification.php");
 
 

@@ -16,19 +16,31 @@
 	<body>
 		<div class="container">
 			<div class="form">
-				<form class="registerform" name="registerForm" method="POST" action="newUser.php">
+				<form class="registerform" name="registerForm" id="registerForm" method="POST" action="newUser.php" novalidate>
 					<div class="formtitle">
 						Welcome To Register Form
 					</div>
-						<input type="text" name="name" placeholder="Name" required> 
+					<span id="errorMsg" align="center" style="color:red;"></span>
+					<div class="">
+						<input type="text" name="name" id="name" placeholder="Name" onkeyup="return removeRedBorder();" required> 
+					</div>
+					
+					<div id='mail_div' class="">	
+						<span id="error" align="center" style="color:red;"></span>
+						<input type="email" name="email" id="email" placeholder="Email" onkeyup="return removemail();"  required>
 						
-						<input type="email" name="email" placeholder="Email"  required>
+					</div>
+					
 						<label>
 						
+						<div class="">
 							<input type="password" name="password" id="password" placeholder="Password"   required>
-							
-							<input type="password" name="confirmpassword" id="confirm_password"  onkeyup='check();' placeholder="Retype Password" required>
-							
+						</div>
+						
+						
+							<input type="password" name="confirmpassword" id="confirm_password"  onkeyup='return checkPassword();' placeholder="Retype Password" required>
+						
+						
 						<span class="">	
 							<i class="fa fa-check-square" id="success-icon" style="font-size:24px"></i>
 							<i class="fa fa-times" id="failure-icon"  style="font-size:24px"></i>
@@ -37,7 +49,7 @@
 							
 						</label>
 						
-						<button type="submit" value="submit">Create Account</button>
+						<button type="submit" value="submit" onclick='return validateForm();'>Create Account</button>
 						<a href="authentification.php"> Return to Login </a>
 					
 				</form>

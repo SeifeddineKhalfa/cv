@@ -101,3 +101,19 @@ body,html {
     top: 10px;
     left: 0;
 }
+
+.message{
+	display:block;
+}
+
+
+.error input{
+	border : 2px solid red;
+}
+.valid input{
+	border : 1px solid green;
+}
+.error .message {
+	display: block;
+	color: red;
+}

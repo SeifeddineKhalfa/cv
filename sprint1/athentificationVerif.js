@@ -1,18 +1,22 @@
-function athentification()
+function validateForm() {
+    var x = document.forms["loginForm"]["email"].value;
+	var pwd = document.forms["loginForm"]["pwd"].value;
+	var regx= /^[a-zA-Z]+[a-zA-Z0-9\_\-]*@[a-zA-Z]*.[a-zA-Z][a-zA-Z]{2,3}/;
+    if (x == null || x == "" || pwd == null || pwd== "") 
 	{
-        var email = document.getElementById('email').value;
-        var pwd	=   document.getElementById('pwd').value;
-		var regexmail = new RegExp(/^[a-zA-Z]+[a-zA-Z0-9\_\-]*@[a-zA-Z]*.[a-zA-Z][a-zA-Z]{2,3}/);
-		
-        if (email==null || email=="",pwd==null || pwd=="")
-        {
-            alert("Please Fill All Required Field");
-            return false;
-        }
-		
-		if(!regexmail.test(email))
-		{
-			alert("Please Enter A Valid Email Adress");
-            return false;
-		}
+        // fill out the placeholder with a message
+        document.getElementById("errorMsg").innerHTML = "*All Fields must be filled out";
+        return false;
     }
+	
+
+	
+	else {
+		if (!regx.test.x)
+	{
+		document.getElementById("errorMsg").innerHTML = "";
+		document.getElementById("errorMsg2").innerHTML = "*Please enter a valid Email";
+		return false;
+	}
+	}
+}

@@ -8,16 +8,30 @@
     
     <body>
         <?php
+			/*if(empty($_POST['email']))
+			{
+				echo ("Email is empty!");
+				return false;
+			}
+			
+			if(empty($_POST['pwd']))
+			{
+				echo ("Password is empty!");
+				return false;
+			}*/
+			
 			if(isset($_POST['email']) && isset($_POST['pwd']))
 			{
-				//include 'DB.php';
-				//$db = DB::getInstance();
-				
-				$db = new PDO('mysql:host=localhost;dbname=cv', 'root' , '');
-				
 				$password=MD5($_POST['pwd']);
+				
+				include 'DB.php';
+				$db = DB::getConnexion();
+				
+				//$db = new PDO('mysql:host=localhost;dbname=cv', 'root' , '');
+				
+				
 				$query = "SELECT * FROM users WHERE email ='".$_POST['email']."' AND password='".$password."'" ;
-			    $statement = $db->prepare($query);  
+			    $statement =$db->prepare($query);  
 			    $statement->execute
 				(  
 					array(  
@@ -25,15 +39,20 @@
 						 'password'     =>  $_POST["pwd"]  
 					)  
 				);  
+
 			   $count = $statement->rowCount();  
 			   if($count > 0)  
 			   {  
-				   session_start();
+				    session_start();
 					$_SESSION["email"] = $_POST["email"];  
 					header("location:MyCV.php");  
-			   }  
-			   else  
+			   } 
+			   
+			  else  
 			   {  
+					session_start();
+					$_SESSION["message"] = nl2br("Invalid Inputs ! \n Please check!");
+					header("location:authentification.php");
 					 
 			   }  
 
