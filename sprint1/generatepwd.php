@@ -61,13 +61,13 @@
 				if(!$mail->Send())
 					echo "Message was not sent <br />PHPMailer Error: " . $mail->ErrorInfo;
 				else
-					echo "<p align='center' style='position: relative;
+					echo "<h2 align='center' style='position: relative;
 									color:#EB7B2D;
 									background: #AED6F1;
 									margin: 200px auto 100px;
 									box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);'>
-									Message has been sent to '".$_POST['mail']."'
-									</p>";
+									Message has been sent to '".$_POST['mail']."' <br> <a href='pwdGenerator.php'>Return</a></h2>";
+									 
 				
 				//************************************//
 				//update password (use md5())
@@ -93,9 +93,11 @@
 						
 						box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);">
 					 <h1 align="center" style="color:#EB7B2D ;margin:300px;"> <?php echo $_POST['mail'] ?> may be wrong or not registred before !  <br>
-					 Please <a href="register.php">Register</a> <br>
+					 Please <a href="register.php">Register</a> Or <a href="pwdGenerator.php">Return</a> <br>
+					 
 					 
 					 </h1>
+					 
 					</div> 
 				<?php	 
 				}

@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -7,7 +10,7 @@
 		<link rel="icon" type="image/png" href="loginIcon.png"/>
 		<link rel="stylesheet" type="text/css" href="loginstyle.css">
 		<!--===============================================================================================-->	
-		<!--<script src="athentificationVerif.js"></script>-->
+		<script src="athentificationVerif.js"></script>
 	</head>
 	
 	<body>
@@ -23,34 +26,28 @@
 					
 					
 						
-						<?php
-						
-							session_start();
-							
+						<?php	
 							if (isset($_SESSION["message"]))
 							{?>
 								<div class="account-created-msg">
 								<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
 								<?php echo $_SESSION["message"]; ?>
+								
 								</div>
 							<?php	
-								session_unset();
-							}
-						?>
+							session_unset();}
+							?>
 						
-						<?php
-						
-							//session_start();
-							
-							if (isset($_SESSION["message"]))
+						<?php	
+							if (isset($_SESSION["alertMsg"]))
 							{?>
 								<div class="invalid-authentification">
-								<?php echo $_SESSION["message"]; ?>
+								<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+								<?php echo $_SESSION["alertMsg"]; ?>
 								</div>
 							<?php	
-								session_unset();
-							}
-						?>
+							session_unset();}
+							?>
 						
 					
 					

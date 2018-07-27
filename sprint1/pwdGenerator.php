@@ -17,6 +17,7 @@
 					<input type="email" class="mail" name="mail" placeholder="Enter your Login Email Adress" required>
 					
 					<input type="submit" id="submit" value="Send">
+					<a href="authentification.php" class="return">Return</a>
 				
 				</form>
 			</div>

@@ -20,34 +20,30 @@
 					<div class="formtitle">
 						Welcome To Register Form
 					</div>
-					<span id="errorMsg" align="center" style="color:red;"></span>
+					<span id="alertEmptyFields" align="center" style="color:red;"></span>
 					<div class="">
 						<input type="text" name="name" id="name" placeholder="Name" onkeyup="return removeRedBorder();" required> 
 					</div>
 					
-					<div id='mail_div' class="">	
+					<div id='mail_div' class="">
+					
 						<span id="error" align="center" style="color:red;"></span>
 						<input type="email" name="email" id="email" placeholder="Email" onkeyup="return removemail();"  required>
 						
 					</div>
 					
-						<label>
+						
 						
 						<div class="">
 							<input type="password" name="password" id="password" placeholder="Password"   required>
 						</div>
 						
-						
+						<div class="">
 							<input type="password" name="confirmpassword" id="confirm_password"  onkeyup='return checkPassword();' placeholder="Retype Password" required>
+							<i class="fa fa-check-square" id="success-icon" style="font-size:24px;  line-height: 38px;"></i>
+							<i class="fa fa-times" id="failure-icon"  style="font-size:24px;  line-height: 38px;"></i>	
+						</div>	
 						
-						
-						<span class="">	
-							<i class="fa fa-check-square" id="success-icon" style="font-size:24px"></i>
-							<i class="fa fa-times" id="failure-icon"  style="font-size:24px"></i>
-						</span>	
-							
-							
-						</label>
 						
 						<button type="submit" value="submit" onclick='return validateForm();'>Create Account</button>
 						<a href="authentification.php"> Return to Login </a>

@@ -24,9 +24,8 @@ body,html {
 	position: relative;
 	z-index: 1;
 	background: #AED6F1;
-	max-width: 360px;
 	margin: 0 auto 100px;
-	padding: 45px;
+	padding: 15px;
 	text-align: center;
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 	
@@ -48,7 +47,7 @@ body,html {
   font-family: "Roboto", sans-serif;
   outline: 0;
   background: #f2f2f2;
-  width: 100%;
+  width: 255px !important;
   border: 0;
   margin: 0 0 15px;
   padding: 15px;
@@ -61,13 +60,13 @@ body,html {
   text-transform: uppercase;
   outline: 0;
   background: #2E86C1 ;
-  width: 100%;
+  width: 85%;
   border: 0;
   padding: 15px;
   color: #FFFFFF;
   font-size: 14px;
-  -webkit-transition: all 0.3 ease;
-  transition: all 0.3 ease;
+  /*-webkit-transition: all 0.3 ease;*/
+  /*transition: all 0.3 ease;*/
   cursor: pointer;
   margin: 20px 0;
 }
@@ -82,10 +81,13 @@ body,html {
     color: #199900;
     font-size: 18px;
     padding-right: 0.5em;
-	
+
+	float:right;
     top: 10px;
     left: 0;
 }
+
+
 
 #failure-icon{
     display : none;
@@ -95,11 +97,22 @@ body,html {
     text-decoration: inherit;
 /*--adjust as necessary--*/
     color: red;
-    font-size: 18px;
+    
     padding-right: 0.5em;
-  
+
+	float:right;
     top: 10px;
     left: 0;
+}
+#confirm_password
+{
+	float : left;
+	margin-left: 37px;
+}
+
+#confirm_password:after
+{
+	content :"\f14a";
 }
 
 .message{

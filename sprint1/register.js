@@ -10,14 +10,14 @@ var checkPassword = function()
 	if (document.getElementById('password').value ==
 		document.getElementById('confirm_password').value )
 	{
-		document.getElementById('success-icon').style.display = 'block';
+		document.getElementById('success-icon').style.display = 'inline';
 		document.getElementById('failure-icon').style.display = 'none';
 
 
 	}
 	else {
 
-		document.getElementById('failure-icon').style.display = 'block';
+		document.getElementById('failure-icon').style.display = 'inline';
 		document.getElementById('success-icon').style.display = 'none';
 
 	//document.getElementById('message').innerHTML = 'not matching';
@@ -37,7 +37,7 @@ var validateForm = function()
 		if(elt.value =="")
 		{
 			elt.parentNode.classList.add('error');
-			document.getElementById("errorMsg").innerHTML = "*All Fields must be filled out";
+			document.getElementById("alertEmptyFields").innerHTML = "*All Fields must be filled out";
 			//elt.addEventListener('keydown', removeValidateProfile(elt));
 			flag = true;
 		
@@ -68,7 +68,7 @@ var removeRedBorder = function()
 			if(name.value !=="")
 			{
 				name.parentNode.classList.remove('error');
-				document.getElementById("errorMsg").innerHTML = "";
+				document.getElementById("alertEmptyFields").innerHTML = "";
 				//name.addEventListener('keydown', removeValidateProfile(name));
 				flag = true;
 				

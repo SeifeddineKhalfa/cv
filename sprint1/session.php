@@ -28,7 +28,7 @@
 				$db = DB::getConnexion();
 				
 				//$db = new PDO('mysql:host=localhost;dbname=cv', 'root' , '');
-				
+				 
 				
 				$query = "SELECT * FROM users WHERE email ='".$_POST['email']."' AND password='".$password."'" ;
 			    $statement =$db->prepare($query);  
@@ -51,7 +51,7 @@
 			  else  
 			   {  
 					session_start();
-					$_SESSION["message"] = nl2br("Invalid Inputs ! \n Please check!");
+					$_SESSION["alertMsg"] = "Invalid infos ! please check";
 					header("location:authentification.php");
 					 
 			   }  
