@@ -44,7 +44,7 @@
 			   if($count > 0)  
 			   {  
 				    session_start();
-					$_SESSION["email"] = $_POST["email"];  
+					$_SESSION["email"] = $_POST["email"]; 
 					header("location:MyCV.php");  
 			   } 
 			   

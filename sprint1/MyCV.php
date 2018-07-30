@@ -1,20 +1,20 @@
 <?php
 	session_start();
-	$_SESSION["name"]='seifeddine khalfa';
+
 	
 ?>
 <!DOCTYPE HTML>
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="mycv-style.css">
-
+		<script src="mycv.js"></script>
 	</head>
 	
 	<body>
 		<div class="container">
 		<div class="topnav">
-			  <a class="active" href="#home">MyCV</a>
-			  <a href="">Edit Infos</a>
+			  <a class="active" href="MyCV.php">MyCV</a>
+			  <a href="#">Edit Infos</a>
 			  <a href="logout.php">Logout</a>
 		</div>
 			<div class="upper-part">
@@ -25,50 +25,77 @@
 					</p>
 				</div>
 				<!--=====================Détails DISPLAY====================================-->	
-				<div class="details" id="details">
-					<ul><h2>Détails</h2>
-						<li>Name : <?php echo $_SESSION["name"] ; ?></li>
-						<li>E_mail :<?php //echo $_SESSION["email"] ;// ?></li>
-						<li>Date Of Birth : <?php  ?></li>
-						<li>Place Of Birth : <?php   ?></li>
-						<li>Adresse : <?php ?></li>
-						<li>Phone : <?php    ?></li>
-						<li>GitHub_Profile : <?php    ?></li>
-						<li>Description : <?php   ?></li>
+				
+				<?php
+					try
+					{
+						// On se connecte à la base
+						$db = new PDO('mysql:host=localhost;dbname=cv', 'root' , '');
+					}
+					catch(Exception $e)
+					{
+						// En cas d'erreur, on affiche un message et on arrête tout
+						   die('Erreur : '.$e->getMessage());
+					}
+					$sql = "SELECT * FROM profile WHERE E_mail ='".$_SESSION['email']."'";
+					$result=$db->prepare($sql);
+					$result->execute();
+					
+					while ($donnees = $result->fetch())
+					{
+						
+				?>
+				
+				<div class="details" id="details" >
+					<ul><h2 style="display:inline-block;">Détails</h2>
+					<input type="button" id="edit-btn" onclick="showForm();" >
+						<li>Name : <?php echo $donnees['name'] ; ?></li>
+						<li>E_mail :<?php echo $_SESSION["email"] ; ?></li>
+						<li>Date Of Birth : <?php echo $donnees['DateOfBirth']; ?></li>
+						<li>Place Of Birth : <?php  echo $donnees['PlaceOfBirth']; ?></li>
+						<li>Adresse : <?php echo $donnees['Adresse']; ?></li>
+						<li>Phone : <?php  echo $donnees['Phone'];  ?></li>
+						<li>GitHub_Profile : <?php  echo $donnees['GitHub_Profile'];  ?></li>
+						<li>Description : <?php echo $donnees['Description'];  ?></li>
 					</ul>
 				</div>
+				 
 				<!--=====================Détails EDIT FORM====================================-->
 				
 				<div class="form-style" id="details-form">
-					<h2 >Add Infos</h2>
-					<form method="POST" action=""  name="details-form" id="details"   >
 					
+					<form method="POST" action="getData.php"  name="details-form" id="details"
+					onsubmit="return confirm('Do you really want to submit the form?');">
+					<h2 >Edit Infos</h2>
+					
+					<span class="closebtn" onclick="return closeForm();">&times;</span>
+					<br>
 						<b>Name : </b> <br>
 						<div>
 							<input type="text"   name="name" id="name" class="name"
-							value="" > 
+							value="<?php if (isset ($donnees['name'])){echo $donnees['name'] ;} ?>" > 
 							
 						</div>
 						<br>
 						
-						<b>DateOfBirth : </b><br>
+						<b>Date Of Birth : </b><br>
 						<div>
 							<input type="date" name="DateOfBirth"   id="dateOfBirth" required
-							value="">
+							value="<?php if (isset ($donnees['DateOfBirth'])){echo $donnees['DateOfBirth'] ;} ?>">
 						</div>
 						<br>
 						
 						<b>Place Of Birth : </b><br>
 						<div>
 							<input type="text" name="PlaceOfBirth"   id="palceOfBirth" required
-							value="">
+							value="<?php if (isset ($donnees['PlaceOfBirth'])){echo $donnees['PlaceOfBirth'] ;} ?>">
 						</div>
 						<br>
 						
 						<div>
 							<b>Adresse</b>  <br>
 							<input type="text"   name="Adresse" id="adress" 
-							value=""> 
+							value="<?php if (isset ($donnees['Adresse'])){echo $donnees['Adresse'] ;} ?>"> 
 						</div>
 						<br>
 						
@@ -77,13 +104,13 @@
 							
 							<b>Phone</b>   <br>
 							<input type="text"   name="Phone" id="phone"
-							value=""> 
+							value="<?php if (isset ($donnees['Phone'])){echo $donnees['Phone'] ;} ?>"> 
 						</div>	<br>
 						
 						<div>
 							<b>E_mail:</b>  <br>
 							<input type="email" name="E_mail" id="email"   placeholder="Enter a valid email address"  required
-							value="">
+							value="<?php if (isset ($_SESSION["email"])){echo $_SESSION["email"] ;} ?>">
 							
 						</div>
 						<br>
@@ -91,25 +118,31 @@
 						<div>
 							<b>GitHub Account:</b>  <br> 
 							<input type="text" name="GitHub_Profile"   id="githubProfile" placeholder="Enter a valid url" required
-							value="">
+							value="<?php if (isset ($donnees['GitHub_Profile'])){echo $donnees['GitHub_Profile'] ;} ?>">
 						</div>
 						<br>
 						
 						<div>
 							<b>Description</b>  <br> 
 							<input type="text" name="Description"   id="description" required
-							value="">
+							value="<?php if (isset ($donnees['Description'])){echo $donnees['Description'] ;} ?>">
 						</div>
 						<br>
 						
-						<input type="submit" value="Submit"  > 
+						<input type="submit" value="Submit" onclick="return ;"  > 
 						<input type="reset" >
+						<?php
+						}
+						$result->closeCursor(); // Termine le traitement de la requête
+						?>
 					</form>
 				</div>
 				<!--=====================Profile picture====================================-->
 				<div class="profile-picture">
-					<img src="NoImageAvailable.png" alt="No Image Available">
-					<button  type="button" onclick="" >Chnage Picture</button>
+					<form method="POST" action="uploadImage.php" enctype="multipart/form-data">
+						<input type="file" name="myimage">
+						<input type="submit" name="submit_image" value="Upload">
+					</form>
 				</div>
 			</div>
 		</div>

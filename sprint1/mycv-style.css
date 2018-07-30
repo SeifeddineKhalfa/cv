@@ -1,4 +1,4 @@
-/*#title 
+.title p 
 {
 	text-align: center;
 	font-size: 1.5em;
@@ -9,7 +9,14 @@
 	
 }
 
-
+#edit-btn
+{
+	display:inline-block;
+	margin-left:100px;
+	background-image:url('edit.png');
+	width: 33px;
+    height: 33px;
+}
 
 /* Add a black background color to the top navigation */
 .topnav {
@@ -41,11 +48,12 @@
 
 .form-style {
     font: 95% Arial, Helvetica, sans-serif;
-    max-width: 400px;
+    width: 370px;
     margin: 10px;
     padding: 16px;
     background: #F7F7F7;
 	float : left;
+	display : none;
 }
 .form-style h1{
     background: #43D1AF;
@@ -56,6 +64,13 @@
     color: #fff;
     margin: -16px -16px 16px -16px;
 }
+
+.form-style h2
+{
+	    display: inline-block;
+}
+
+
 .form-style input[type="text"],
 .form-style input[type="date"],
 .form-style input[type="email"],
@@ -132,4 +147,39 @@
 .details
 {
 	float: left;
+	background:#F7F7F7;
+	width: 400px;
+	margin-right:20px;
+}
+
+.details ul
+{
+	counter-reset:li;
+	list-style:decimal;
+	font:15px 'lucida sans';
+	margin-bottom:4em;
+	padding:0;
+	margin-left: 20px;
+}
+
+.details li
+{
+	margin : 10px;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: red;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+	display: inline-block;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+    color: black;
 }

@@ -25,9 +25,14 @@
 			//$db = DB::getInstance();
 			$db = new PDO('mysql:host=localhost;dbname=cv', 'root' , '');
 			$sql = 'INSERT INTO users (email, password,name) VALUES (?, ?, ?);';
+			
 			$stmt = $db->prepare($sql);
 			// use exec() because no results are returned
 			$stmt->execute([$email, MD5($password),$name]);
+			
+			$req ='INSERT INTO profile (name, E_mail) VALUES (?,?);';
+			$prep = $db->prepare($req);
+			$prep->execute([$name,$email]);
 			//style***
 			//echo "New record created successfully";
 			session_start();
