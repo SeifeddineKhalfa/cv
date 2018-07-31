@@ -1,6 +1,7 @@
 <?php
 	session_start();
-	
+	if ($_POST)
+	{
 	if (isset($_POST['name']) && isset($_POST['DateOfBirth']) && isset($_POST['PlaceOfBirth']) && isset($_POST['Adresse'])
 		&& isset($_POST['Phone']) 
 	&& isset($_POST['E_mail']) && isset($_POST['GitHub_Profile']) && isset($_POST['Description']))
@@ -13,7 +14,7 @@
 	$E_mail=$_POST['E_mail'];
 	$GitHub_Profile=$_POST['GitHub_Profile'];
 	$Description=$_POST['Description'];
-	}
+	
 	
 					try
 					{
@@ -38,7 +39,12 @@
 		$req = 'UPDATE users SET name=? WHERE email="'.$_SESSION['email'].'"';
 		$result = $db->prepare($req);	
 		$result->execute([$name]);
-		
-		header("location:MyCV.php");
+
+			$_SESSION["notifUpdate"] = "Your Infos have been updated !";
+			
+		}
+	
+	}
+	header("location:MyCV.php");	
 ?>		
 		

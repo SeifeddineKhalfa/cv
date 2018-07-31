@@ -1,7 +1,5 @@
 <?php
-	session_start();
-
-	
+	session_start();                                                                                                                                                          
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -47,6 +45,17 @@
 				?>
 				
 				<div class="details" id="details" >
+				
+						<?php
+												
+						if (isset($_SESSION["notifUpdate"]))
+						{?>
+						<div class="notif-update">
+						<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+						<?php echo $_SESSION["notifUpdate"]; ?>
+						</div>
+						<?php  }?>
+						
 					<ul><h2 style="display:inline-block;">Détails</h2>
 					<input type="button" id="edit-btn" onclick="showForm();" >
 						<li>Name : <?php echo $donnees['name'] ; ?></li>
@@ -129,21 +138,27 @@
 						</div>
 						<br>
 						
-						<input type="submit" value="Submit" onclick="return ;"  > 
+						<input type="submit" name="submit" value="Submit" onclick="return ;"  > 
 						<input type="reset" >
-						<?php
-						}
-						$result->closeCursor(); // Termine le traitement de la requête
-						?>
+						
 					</form>
 				</div>
 				<!--=====================Profile picture====================================-->
 				<div class="profile-picture">
-					<form method="POST" action="uploadImage.php" enctype="multipart/form-data">
-						<input type="file" name="myimage">
+					<img src="<?PHP echo ($donnees['profileImage']) ; ?>" >
+				
+				
+					<!--<form method="POST"  action="uploadImage.php" >
+						
+						<input type="file" >
+						<br>
 						<input type="submit" name="submit_image" value="Upload">
-					</form>
+					</form>-->
 				</div>
+					<?php
+					}
+					$result->closeCursor(); // Termine le traitement de la requête
+					?>
 			</div>
 		</div>
 	</body>
